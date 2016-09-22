@@ -62,7 +62,7 @@
 		</ul> 
 	</div>
 	<div class="content">
-		<iframe src="pages/group.html" class="iframe"></iframe>
+		<iframe src="pages/group.html" onload="iframeLoaded()" id="idIframe" class="iframe"></iframe>
 	</div>
 	<div class="navbar navbar-default navbar-fixed-bottom">
         <div style="float: left; opacity: 0.5; margin-left: 15px; margin-top: 15px;">
@@ -73,7 +73,17 @@
 		</div>
 	</div>
 </div>
-
+    
+<script type="text/javascript">
+  function iframeLoaded() {
+      var iFrameID = document.getElementById('idIframe');
+      if(iFrameID) {
+            // here you can make the height, I delete it first, then I make it again
+            iFrameID.height = "";
+            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+      }   
+  }
+</script>  
 <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
