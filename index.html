@@ -79,20 +79,5 @@
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript" src="script/redirect.js"></script>
-<script type="text/javascript" src="script/jquery.ba-postmessage.min.js"></script>
-<script>
-    $(function(){
-      var if_height;
-      $.receiveMessage(function(e){
-          console.log("recevi sim");
-          console.log(e);
-        var h = Number( e.data.replace( /.*if_height=(\d+)(?:&|$)/, '$1' ) );
-        if ( !isNaN( h ) && h > 0 && h !== if_height ) {
-          // Height has changed, update the iframe.
-          iframe.height( if_height = h );
-        }
-      }, 'https://antoniorib.github.io/' );
-    });    
-</script>
 </body>
 </html>
