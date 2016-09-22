@@ -138,4 +138,16 @@
 <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript" src="../script/redirect.js"></script>
+<script type="text/javascript" src="../script/jquery.ba-postmessage.min.js"></script>
+<script>
+    $('.panel-collapse').on('hidden.bs.collapse', function (e) {
+        console.log("Não me chateiem que eu mandei");
+        $.postMessage($('body').outerHeight(true), "AntonioRib.github.io");
+    })
+    
+    $('.panel-collapse').on('shown.bs.collapse', function (e) {
+        console.log("Não me chateiem que eu mandei tambénm");
+        $.postMessage($('body').outerHeight(true), "AntonioRib.github.io");
+    })
+</script>
 </body>
